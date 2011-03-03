@@ -1,5 +1,15 @@
 require 'rake'
 require 'spec/rake/spectask'
+require 'rubygems'
+require 'bundler'
+
+begin
+  Bundler.setup(:default, :development)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run bundle install to install missing gems"
+  exit e.status_code
+end
 
 desc "Run all specs"
 Spec::Rake::SpecTask.new('spec') do |t|

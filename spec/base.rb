@@ -1,5 +1,9 @@
 require 'rubygems'
-require 'spec'
+require 'bundler/setup'
+Bundler.setup(:default, :development)
+require 'sass'
+require 'sass/plugin'
+require 'rack'
 require 'rack/test'
 
 require File.dirname(__FILE__) + '/../lib/hassle'
